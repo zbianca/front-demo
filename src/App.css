@@ -8,16 +8,6 @@
   width: 1px;
 }
 
-.header {
-  padding: 2.5rem;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.header select {
-  width: fit-content;
-  height: fit-content;
+.container {
+  padding-block: 2.5rem;
 }
