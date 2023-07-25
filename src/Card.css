@@ -1,0 +1,45 @@
+.card {
+  border: 2px solid var(--muted-color);
+  border-radius: var(--border-radius);
+  width: 14rem;
+}
+
+.image {
+  height: 10rem;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+.content {
+  padding: 0.6rem 1rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.heart {
+  height: 1.875rem;
+}
+
+.heartBtn {
+  width: 3.125rem;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.price {
+  margin-bottom: 1rem;
+}
+
+.ref {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+}

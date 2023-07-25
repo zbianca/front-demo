@@ -6,7 +6,7 @@ function App() {
   return (
     <main data-theme="light" className="container">
       <h1>Cards Deck</h1>
-      {/* TODO: Add components */}
+      <Card title="Turquoise Silk" color="turquoise" />
     </main>
   );
 }
