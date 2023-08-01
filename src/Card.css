@@ -2,6 +2,7 @@
   border: 2px solid var(--muted-color);
   border-radius: var(--border-radius);
   width: 14rem;
+  flex-shrink: 0;
 }
 
 .card:hover {

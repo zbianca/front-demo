@@ -16,9 +16,11 @@ function App() {
   return (
     <main data-theme="light" className="container">
       <h1>Cards Deck</h1>
-      {cards.map((card) => (
-        <Card title={card.title} color={card.color} />
-      ))}
+      <div className="deck">
+        {cards.map((card) => (
+          <Card title={card.title} color={card.color} />
+        ))}
+      </div>
     </main>
   );
 }
