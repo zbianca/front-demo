@@ -1,3 +1,4 @@
+import { useId } from "react";
 import "./App.css";
 import Card from "./Card.jsx";
 
@@ -13,14 +14,19 @@ const cards = [
 ];
 
 function App() {
+  const deckId = useId();
+
   return (
     <main data-theme="light" className="container">
       <h1>Cards Deck</h1>
-      <div className="deck">
+      <h2 id={deckId}>Our Silks</h2>
+      <ul className="deck" tabIndex={0} aria-labelledby={deckId}>
         {cards.map((card) => (
-          <Card title={card.title} color={card.color} />
+          <li>
+            <Card title={card.title} color={card.color} />
+          </li>
         ))}
-      </div>
+      </ul>
     </main>
   );
 }

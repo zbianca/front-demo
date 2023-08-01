@@ -12,9 +12,23 @@
   padding-block: 2.5rem;
 }
 
+h2 {
+  margin-block-end: 1rem;
+}
+
+ul.deck li {
+  list-style: none;
+}
+
 .deck {
+  padding-inline-start: 0;
   display: flex;
   gap: 1rem;
   overflow-x: auto;
   padding-bottom: 2rem;
+}
+
+.deck:focus-visible {
+  border-radius: 0.25rem;
+  outline: 3px solid var(--primary-focus);
 }
