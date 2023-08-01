@@ -1,4 +1,6 @@
 import { useId } from "react";
+import SimpleBar from "simplebar-react";
+import "simplebar-react/dist/simplebar.min.css";
 import "./App.css";
 import Card from "./Card.jsx";
 
@@ -20,13 +22,15 @@ function App() {
     <main data-theme="light" className="container">
       <h1>Cards Deck</h1>
       <h2 id={deckId}>Our Silks</h2>
-      <ul className="deck" tabIndex={0} aria-labelledby={deckId}>
-        {cards.map((card) => (
-          <li>
-            <Card title={card.title} color={card.color} />
-          </li>
-        ))}
-      </ul>
+      <SimpleBar forceVisible="x" autoHide={false}>
+        <ul className="deck" aria-labelledby={deckId}>
+          {cards.map((card, i) => (
+            <li key={`${deckId}-${i}`}>
+              <Card title={card.title} color={card.color} />
+            </li>
+          ))}
+        </ul>
+      </SimpleBar>
     </main>
   );
 }
