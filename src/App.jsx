@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useEffect, useId } from "react";
 import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import "./App.css";
@@ -37,6 +37,13 @@ function App() {
       }
     }, 25);
   };
+
+  useEffect(() => {
+    const simplebarWrapper = document.querySelector(
+      ".simplebar-content-wrapper"
+    );
+    simplebarWrapper.setAttribute("aria-label", "Our Silks");
+  }, []);
 
   return (
     <main data-theme="light" className="container">

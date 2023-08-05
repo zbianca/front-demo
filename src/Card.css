@@ -27,6 +27,7 @@
 
 .title {
   margin-bottom: 1rem;
+  min-height: 5.625rem;
 }
 
 .heart {
