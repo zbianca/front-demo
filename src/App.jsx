@@ -22,14 +22,15 @@ function App() {
     const card = document.querySelector(".card");
     const deck = document.querySelector(".deck");
     let scrollAmount = 0;
+    const CARD_WIDTH = parseInt(card.offsetWidth);
     const GAP_WIDTH = parseInt(getComputedStyle(deck).gap);
-    const SCROLL_WIDTH = (card.offsetWidth + GAP_WIDTH) * 1;
+    const SCROLL_WIDTH = (CARD_WIDTH + GAP_WIDTH) * 1;
 
     const slideTimer = setInterval(() => {
       if (direction === "left") {
-        container.scrollLeft -= parseInt(SCROLL_WIDTH, 10) / 10;
+        container.scrollLeft -= SCROLL_WIDTH / 10;
       } else {
-        container.scrollLeft += parseInt(SCROLL_WIDTH, 10) / 10;
+        container.scrollLeft += SCROLL_WIDTH / 10;
       }
       scrollAmount += 10;
       if (scrollAmount >= 100) {
