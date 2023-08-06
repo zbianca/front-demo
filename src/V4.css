@@ -1,0 +1,36 @@
+.container {
+  padding-block: 2.5rem;
+}
+
+h2 {
+  margin-block-end: 1rem;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+ul.deck li {
+  list-style: none;
+}
+
+.v4 .deck {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.simplebar-content-wrapper:focus-visible {
+  border-radius: 0.25rem;
+  border: 4px solid var(--primary-focus);
+}
+
+.v4.simplebar-track.simplebar-horizontal {
+  background-color: var(--background-color);
+}
+
+.v4.simplebar-scrollbar.simplebar-visible::before {
+  background-color: var(--primary);
+  opacity: 1;
+  height: 0.25rem;
+}

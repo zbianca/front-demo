@@ -1,76 +1,37 @@
-import { useEffect, useId } from "react";
-import SimpleBar from "simplebar-react";
-import "simplebar-react/dist/simplebar.min.css";
-import "./App.css";
-import Card from "./Card.jsx";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import V0 from "./V0";
+import V1 from "./v1";
+import V2 from "./V2";
+import V3 from "./V3";
+import V4 from "./V4";
+import V5 from "./V5";
+import V6 from "./V6";
+import V7 from "./V7";
+import V8 from "./V8";
 
-const cards = [
-  { title: "Turquoise Silk", color: "turquoise" },
-  { title: "Teal Silk", color: "teal" },
-  { title: "Forest Green Silk", color: "forestgreen" },
-  { title: "Sea Green Silk", color: "seagreen" },
-  { title: "Coral Silk", color: "coral" },
-  { title: "Salmon Silk", color: "salmon" },
-  { title: "Crimson Silk", color: "crimson" },
-  { title: "Firebrick Silk", color: "firebrick" },
-];
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route index element={<V0 />} />
+      <Route path="v1" element={<V1 />} />
+      <Route path="v2" element={<V2 />} />
+      <Route path="v3" element={<V3 />} />
+      <Route path="v4" element={<V4 />} />
+      <Route path="v5" element={<V5 />} />
+      <Route path="v6" element={<V6 />} />
+      <Route path="v7" element={<V7 />} />
+      <Route path="v8" element={<V8 />} />
+    </Route>
+  )
+);
 
 function App() {
-  const deckId = useId();
-  const sideScroll = (direction) => {
-    const container = document.querySelector(".simplebar-content-wrapper");
-    const card = document.querySelector(".card");
-    const deck = document.querySelector(".deck");
-    let scrollAmount = 0;
-    const CARD_WIDTH = parseInt(card.offsetWidth);
-    const GAP_WIDTH = parseInt(getComputedStyle(deck).gap);
-    const SCROLL_WIDTH = (CARD_WIDTH + GAP_WIDTH) * 1;
-
-    const slideTimer = setInterval(() => {
-      if (direction === "left") {
-        container.scrollLeft -= SCROLL_WIDTH / 10;
-      } else {
-        container.scrollLeft += SCROLL_WIDTH / 10;
-      }
-      scrollAmount += 10;
-      if (scrollAmount >= 100) {
-        window.clearInterval(slideTimer);
-      }
-    }, 25);
-  };
-
-  useEffect(() => {
-    const simplebarWrapper = document.querySelector(
-      ".simplebar-content-wrapper"
-    );
-    simplebarWrapper.setAttribute("aria-label", "Our Silks");
-  }, []);
-
-  return (
-    <main data-theme="light" className="container">
-      <h1>Cards Deck</h1>
-      <h2 id={deckId}>Our Silks</h2>
-      <div className="scroll-wrapper">
-        <SimpleBar forceVisible="x" autoHide={false}>
-          <ul className="deck" aria-labelledby={deckId}>
-            {cards.map((card, i) => (
-              <li key={`${deckId}-${i}`}>
-                <Card title={card.title} color={card.color} />
-              </li>
-            ))}
-          </ul>
-        </SimpleBar>
-        <div className="buttons">
-          <button className="button-left" onClick={() => sideScroll("left")}>
-            ←
-          </button>
-          <button className="button-right" onClick={() => sideScroll("right")}>
-            →
-          </button>
-        </div>
-      </div>
-    </main>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
