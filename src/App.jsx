@@ -27,7 +27,10 @@ const router = createBrowserRouter(
       <Route path="v7" element={<V7 />} />
       <Route path="v8" element={<V8 />} />
     </Route>
-  )
+  ),
+  {
+    basename: "/front-demo",
+  }
 );
 
 function App() {
