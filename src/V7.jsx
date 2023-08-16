@@ -1,5 +1,4 @@
 import { useId, useEffect } from "react";
-import { Link } from "react-router-dom";
 import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import Card from "./Card.jsx";
@@ -21,13 +20,18 @@ function V7() {
   const deckId = useId();
   const sideScroll = (direction) => {
     const container = document.querySelector(".simplebar-content-wrapper");
+    const card = document.querySelector(".card");
+    const deck = document.querySelector(".deck");
     let scrollAmount = 0;
+    const CARD_WIDTH = parseInt(card.offsetWidth);
+    const GAP_WIDTH = parseInt(getComputedStyle(deck).gap);
+    const SCROLL_WIDTH = (CARD_WIDTH + GAP_WIDTH) * 1;
 
     const slideTimer = setInterval(() => {
       if (direction === "left") {
-        container.scrollLeft -= 20;
+        container.scrollLeft -= SCROLL_WIDTH / 10;
       } else {
-        container.scrollLeft += 20;
+        container.scrollLeft += SCROLL_WIDTH / 10;
       }
       scrollAmount += 10;
       if (scrollAmount >= 100) {
@@ -55,12 +59,7 @@ function V7() {
 
   return (
     <main data-theme="light" className="container v6">
-      <div className="nav">
-        <h1>Cards Deck</h1>
-        <Link to="../v8" relative="path" tabIndex={-1}>
-          v8
-        </Link>
-      </div>
+      <h1>Cards Deck</h1>
       <h2 id={deckId}>{category}</h2>
       <div className="scroll-wrapper">
         <SimpleBar forceVisible="x" autoHide={false}>

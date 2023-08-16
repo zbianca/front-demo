@@ -21,6 +21,11 @@ function V5() {
   const deckId = useId();
 
   useEffect(() => {
+    const simplebarWrapper = document.querySelector(
+      ".simplebar-content-wrapper"
+    );
+    simplebarWrapper.setAttribute("aria-label", category);
+
     // lame CSS scoping
     const trackHorizontal = document.querySelector(
       ".simplebar-track.simplebar-horizontal"

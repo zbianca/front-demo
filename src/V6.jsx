@@ -19,8 +19,29 @@ const cards = [
 
 function V6() {
   const deckId = useId();
+  const sideScroll = (direction) => {
+    const container = document.querySelector(".simplebar-content-wrapper");
+    let scrollAmount = 0;
+
+    const slideTimer = setInterval(() => {
+      if (direction === "left") {
+        container.scrollLeft -= 20;
+      } else {
+        container.scrollLeft += 20;
+      }
+      scrollAmount += 10;
+      if (scrollAmount >= 100) {
+        window.clearInterval(slideTimer);
+      }
+    }, 25);
+  };
 
   useEffect(() => {
+    const simplebarWrapper = document.querySelector(
+      ".simplebar-content-wrapper"
+    );
+    simplebarWrapper.setAttribute("aria-label", category);
+
     // lame CSS scoping
     const trackHorizontal = document.querySelector(
       ".simplebar-track.simplebar-horizontal"
