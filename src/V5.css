@@ -26,7 +26,7 @@ ul.deck li {
 }
 
 .v5.simplebar-track.simplebar-horizontal {
-  background-color: var(--background-color);
+  background-color: transparent;
   padding: 1.125rem;
 }
 

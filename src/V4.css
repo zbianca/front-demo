@@ -26,7 +26,7 @@ ul.deck li {
 }
 
 .v4.simplebar-track.simplebar-horizontal {
-  background-color: var(--background-color);
+  background-color: transparent;
 }
 
 .v4.simplebar-scrollbar.simplebar-visible::before {
