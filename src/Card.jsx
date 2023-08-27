@@ -32,7 +32,7 @@ function Card({ title, color }) {
             />
           </button>
         </div>
-        <p className="price">$$/m</p>
+        <p className="price">$$/g</p>
         <small className="ref">Ref# XYZ01</small>
       </div>
     </div>

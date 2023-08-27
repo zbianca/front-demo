@@ -5,16 +5,16 @@ import "simplebar-react/dist/simplebar.min.css";
 import Card from "./Card.jsx";
 import "./V4.css";
 
-const category = "Our Silks";
+const category = "Our Medium Roast";
 const cards = [
-  { title: "Turquoise Silk", color: "turquoise" },
-  { title: "Teal Silk", color: "teal" },
-  { title: "Forest Green Silk", color: "forestgreen" },
-  { title: "Sea Green Silk", color: "seagreen" },
-  { title: "Coral Silk", color: "coral" },
-  { title: "Salmon Silk", color: "salmon" },
-  { title: "Crimson Silk", color: "crimson" },
-  { title: "Firebrick Silk", color: "firebrick" },
+  { title: "American Roast", color: "#C79161" },
+  { title: "City+ Roast", color: "#9A7B4F" },
+  { title: "Breakfast Roast", color: "#9F5F43" },
+  { title: "Regular Roast", color: "#964C27" },
+  { title: "Medium City Roast", color: "#753D28" },
+  { title: "Full City Roast", color: "#4A231A" },
+  { title: "Vienna Roast", color: "#5A382C" },
+  { title: "Continental Roast", color: "#5F4643" },
 ];
 
 function V4() {
