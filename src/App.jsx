@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import V0 from "./V0";
 import V1 from "./V1";
+import V1b from "./V1b";
 import V2 from "./V2";
 import V3 from "./V3";
 import V4 from "./V4";
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
     <Route>
       <Route index element={<V0 />} />
       <Route path="v1" element={<V1 />} />
+      <Route path="v1b" element={<V1b />} />
       <Route path="v2" element={<V2 />} />
       <Route path="v3" element={<V3 />} />
       <Route path="v4" element={<V4 />} />

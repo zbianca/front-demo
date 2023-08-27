@@ -1,6 +1,6 @@
 import { useId } from "react";
 import { Link } from "react-router-dom";
-import Card from "./Card.jsx";
+import CardNoInteraction from "./CardNoInteraction.jsx";
 import "./V1.css";
 
 const category = "Our Medium Roast";
@@ -15,31 +15,29 @@ const cards = [
   { title: "Continental Roast", color: "#5F4643" },
 ];
 
-function V1() {
+function V1b() {
   const deckId = useId();
 
   return (
     <main data-theme="light" className="container v1">
       <div className="nav">
         <h1>Cards Deck</h1>
-        <div>
-          <Link to="../v1b" relative="path" tabIndex={-1}>
-            v1b
-          </Link>{" "}
-          |{" "}
-          <Link to="../v2" relative="path" tabIndex={-1}>
-            v2
-          </Link>
-        </div>
+        <Link to="../v2" relative="path" tabIndex={-1}>
+          v2
+        </Link>
       </div>
       <h2>{category}</h2>
       <div className="deck">
         {cards.map((card, i) => (
-          <Card key={`${deckId}-${i}`} title={card.title} color={card.color} />
+          <CardNoInteraction
+            key={`${deckId}-${i}`}
+            title={card.title}
+            color={card.color}
+          />
         ))}
       </div>
     </main>
   );
 }
 
-export default V1;
+export default V1b;
